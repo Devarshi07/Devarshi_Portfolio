@@ -1,4 +1,4 @@
-import openaiService from '../services/openaiService.js';
+import geminiService from '../services/geminiService.js';
 import Joi from 'joi';
 
 const chatSchema = Joi.object({
@@ -18,7 +18,7 @@ export const sendMessage = async (req, res, next) => {
 
     const { message, sessionId } = value;
 
-    const response = await openaiService.chat(message, sessionId || 'default');
+    const response = await geminiService.chat(message, sessionId || 'default');
 
     res.json({
       success: true,
@@ -35,7 +35,7 @@ export const sendMessage = async (req, res, next) => {
 export const clearHistory = async (req, res, next) => {
   try {
     const { sessionId } = req.body;
-    openaiService.clearHistory(sessionId || 'default');
+    geminiService.clearHistory(sessionId || 'default');
     
     res.json({
       success: true,
