@@ -8,7 +8,7 @@ class GeminiService {
       this.client = null;
     } else {
       this.client = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-      this.model = this.client.getGenerativeModel({ model: 'gemini-1.5-flash' });
+      this.model = this.client.getGenerativeModel({ model: 'gemini-2.5-flash' });
     }
     this.conversationHistory = new Map();
   }
