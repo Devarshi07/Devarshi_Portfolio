@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { Icons } from '../UI/Icons';
-import api from '../api';
+import api from '../../services/api';
 
 export default function ChatBot({ avatar }) {
   const [isOpen, setIsOpen] = useState(false);
