@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { Icons } from '../UI/Icons';
-import axios from 'axios';
+import api from '../api';
 
 export default function ChatBot({ avatar }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +30,7 @@ export default function ChatBot({ avatar }) {
     setIsLoading(true);
 
     try {
-      const response = await axios.post('/api/chat', {
+      const response = await api.post('/chat', {
         message: input,
         sessionId: sessionId.current
       });
@@ -56,7 +56,7 @@ export default function ChatBot({ avatar }) {
 
   const clearChat = async () => {
     try {
-      await axios.post('/api/chat/clear', {
+      await api.post('/chat/clear', {
         sessionId: sessionId.current
       });
       setMessages([
