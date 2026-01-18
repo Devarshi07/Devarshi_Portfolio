@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// Use Railway backend URL directly
-const API_BASE_URL = 'https://fearless-essence-production.up.railway.app/api';
+// Use environment variable, fallback to local development
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001/api';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
