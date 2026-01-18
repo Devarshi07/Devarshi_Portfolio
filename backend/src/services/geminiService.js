@@ -44,7 +44,9 @@ class GeminiService {
         history: chatHistory,
         generationConfig: {
           temperature: 0.7,
-          maxOutputTokens: 500,
+          maxOutputTokens: 2048,  // Much more room for complete answers
+          topP: 0.95,
+          topK: 40,
         },
       });
 
