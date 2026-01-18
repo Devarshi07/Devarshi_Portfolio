@@ -1,0 +1,283 @@
+{
+  "profile": {
+    "name": "Devarshi Mahajan",
+    "role": "ML Engineer | AI Systems Researcher",
+    "headline": "ARCHITECTING INTELLIGENCE",
+    "subHeadline": "Transforming complex AI research into scalable production systems",
+    "image": "/devarshi.png",
+    "status": "OPEN TO OPPORTUNITIES",
+    "location": "Boston, MA",
+    "email": "devarshim2002@gmail.com"
+  },
+  "links": {
+    "github": "https://github.com/devarshi07",
+    "linkedin": "https://www.linkedin.com/in/devarshi-mahajan-973a80209/",
+    "twitter": "https://x.com/MahajanDev80455",
+    "email": "mailto:devarshim2002@gmail.com",
+    "calendly": "https://calendly.com/devarshim2002/30min"
+  },
+  "stats": {
+    "githubContributions": 1240,
+    "leetcode": {
+      "easy": 210,
+      "medium": 180,
+      "hard": 60,
+      "total": 450
+    }
+  },
+  "skills": [
+    {
+      "name": "Programming Languages",
+      "skills": ["Python", "C++", "SQL", "JavaScript"]
+    },
+    {
+      "name": "Libraries/Frameworks",
+      "skills": ["Tensorflow", "Node.js", "Express.js", "React.js", "PyTorch", "PySpark", "LangChain", "Linux", "Git"]
+    },
+    {
+      "name": "DevOps and Database",
+      "skills": ["AWS (EC2, S3, Lambda, EKS)", "GCP (CloudSQL, Cloud Run)", "Docker", "MySQL", "NoSQL", "GitHub Actions(CI/CD)"]
+    },
+    {
+      "name": "GenAI and tools:",
+      "skills": ["LLM Finetuning", "RAG AI Tools(Gemini, Claude, Cursor)"]
+    },
+    {
+      "name": "Soft skills",
+      "skills": ["Effective Leadership", "Time and Resource Management", "Strategic Negotiation", "Problem solving"]
+    }
+  ],
+  "projects": [
+    {
+      "title": "HotelIQ Platform",
+      "category": "GenAI",
+      "desc": "AI-powered hotel booking with RAG pipeline",
+      "tags": ["LangGraph", "FastAPI", "React"],
+      "github": "https://github.com/Devarshi07/hotel-iq",
+      "featured": true
+    },
+    {
+      "title": "Customer GenAI Call Analysis",
+      "category": "GenAI",
+      "desc": "Engineered a Scalable AI platform (Whisper ASR, RAG) with an MLOps pipeline (Airflow, Docker) to cut by 70%. Reduced manual review using fine tuned NLP models for sentiment/topic analysis, delivering insights via a Power BI dashboard",
+      "tags": ["Airflow", "Docker", "Whisper ASR", "FastAPI", "ChromaDB", "PowerBI"],
+      "github": "https://github.com/Devarshi07/Call-Transcript-GenAI-Analysis",
+      "featured": true
+    },
+    {
+      "title": "AI Powered Job Assistant Agent",
+      "category": "GenAI",
+      "desc": "Architected a full stack job search platform using React.js, Node.js, and MongoDB to manage the job listings and user profiles. Engineered an intelligent chatbot with a RAG pipeline, fine tuning all-MiniLM-L6-v2 embeddings for semantic search and leveraging LLaMA 3.2-3b to provide automated resume analysis and job fit insights",
+      "tags": ["React.js", "Node.js", "MongoDB", "Express.js", "ChromaDB", "NLP"],
+      "github": "https://github.com/Devarshi07/CareerCompass",
+      "featured": true
+    },
+    {
+      "title": "SkyFlow",
+      "category": "GenAI",
+      "desc": "Designed and tested a scalable airline backend system with a microservices architecture, using REST APIs for interservice communication and RabbitMQ (pub/sub) for asynchronous reminders. Built a CI/CD pipeline with Docker and GitHub Actions for automated builds and deployments, implemented Redis caching and NGINX rate limiting to ensure high traffic loads and scalability",
+      "tags": ["Node.js", "Docker", "PostgreSQL", "MongoDB", "RabbitMQ", "Redis", "NGINX", "GitHub"],
+      "github": "https://github.com/Devarshi07/SkyFlow",
+      "featured": true
+    }
+  ],
+  "experience": [
+    {
+      "year": "Jun 2023 – May 2024",
+      "title": "Machine Learning Engineer - Capstone Project ",
+      "org": "Stanley Black & Decker",
+      "desc": "Built CNN-Autoencoder visual inspection system",
+      "location": "Pune, India"
+    },
+    {
+      "year": "Aug 2022 – Jan 2023",
+      "title": "Software Developer Intern ",
+      "org": "Digilocker",
+      "desc": "Built CNN-Autoencoder visual inspection system",
+      "location": "Remote"
+    },
+    {
+      "year": "Dec 2021 – Sept 2022",
+      "title": "Software Developer Intern ",
+      "org": "D.Y. Patil University",
+      "desc": "Built Full-stack Data Collection System",
+      "location": "Pune, India"
+    }
+  ],
+  "education": [
+    {
+      "year": "Sept 2024 - Dec 2026",
+      "title": "Master of Science in Data Analytics Engineering",
+      "org": "Northeastern University",
+      "desc": "Algorithms, Database Management, Data Mining, Gen AI, MLOps ",
+      "location": "Boston, MA"
+    },
+    {
+      "year": "June 2020 - May 2024",
+      "title": "Bachelor of Engineering in Computer Engineering",
+      "org": "Savitribai Phule Pune University",
+      "desc": "Data Science, Machine Learning, Data Structures, Operating Systems, Computer Networks, OOPS ",
+      "location": "Pune, India"
+    }
+  ],
+  "publications": [
+    {
+      "title": "Brain tumor detection using Swin transformers",
+      "venue": "arXiv",
+      "year": "2023",
+      "authors": ["Devarshi Mahajan", "Prateek A Meshram", "Suraj Joshi"],
+      "link": "https://arxiv.org/abs/2305.06025",
+      "description": "Swin transformer model for brain tumor detection"
+    },
+    {
+      "title": "Binary Probing: A Novel Approach for Efficient Hash Table Operations",
+      "venue": "Springer Book Series",
+      "year": "2023",
+      "authors": ["Devarshi Anil Mahajan", "P. P. Halkarnikar", "Prateek A. Meshram", "Suraj Sunil Joshi", "Vaibhav Pawar"],
+      "link": "https://link.springer.com/chapter/10.1007/978-981-97-3526-6_13",
+      "description": "Novel algorithms for efficient search"
+    },{
+      "title": "CNN-Autoencoder with Linear Regression-Based Image Analyzer for Detection of Defects in SQ59 Armatures",
+      "venue": "Springer Book Series",
+      "year": "2025",
+      "authors": ["Devarshi Anil Mahajan", "Suraj Sunil Joshi", "Atharva Deshmukh", "Mukta Dinesh Deore", "Pooja Mishra", "Piyush Jadhav"],
+      "link": "https://link.springer.com/chapter/10.1007/978-3-032-06253-6_38",
+      "description": "Defect detection in manufacturing using CNN-Autoencoder"
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Prateek Meeshram",
+      "role": "Faculty Member, D.Y. Patil University",
+      "text": "Exceptional ML engineer",
+      "avatar": "https://i.pravatar.cc/150?img=1"
+    },
+    {
+      "name": "Suraj Joshi",
+      "role": "Colleague, Stanley Black & Decker",
+      "text": "Exceptional ML engineer",
+      "avatar": "https://i.pravatar.cc/150?img=2"
+    },{
+      "name": "Ramin Mohammadi",
+      "role": "Faculty Member, Northeastern University",
+      "text": "Exceptional ML engineer",
+      "avatar": "https://i.pravatar.cc/150?img=1"
+    }
+
+  ],
+  "funMode": {
+    "funImage": "/devarshi_fun.JPG",
+    "stats": [
+      { "icon": "☕", "value": "500+", "label": "Coffees Coded" },
+      { "icon": "🎮", "value": "1000+", "label": "Gaming Hours" },
+      { "icon": "👥", "value": "40+", "label": "Students Mentored" },
+      { "icon": "✈️", "value": "15+", "label": "Cities Explored" }
+    ],
+    "hobbies": [
+      {
+        "icon": "🎮",
+        "title": "Gaming",
+        "description": "Competitive FPS player and strategy game enthusiast",
+        "achievements": ["Reached Diamond in Valorant", "500+ hours in strategy games"]
+      },
+      {
+        "icon": "🎸",
+        "title": "Music",
+        "description": "Guitar player and music discovery enthusiast",
+        "achievements": ["Play guitar for 5+ years", "Curate playlists for coding sessions"]
+      },
+      {
+        "icon": "🏃",
+        "title": "Fitness",
+        "description": "Regular gym-goer and running enthusiast",
+        "achievements": ["5K runs weekly", "Gym 4x per week"]
+      },
+      {
+        "icon": "📚",
+        "title": "Reading",
+        "description": "Love sci-fi, tech, and self-improvement books",
+        "achievements": ["25+ books/year", "Favorite: Dune series"]
+      },
+      {
+        "icon": "✈️",
+        "title": "Travel",
+        "description": "Explorer of new cities and cultures",
+        "achievements": ["Visited 15+ cities", "Always planning next trip"]
+      },
+      {
+        "icon": "☕",
+        "title": "Coffee",
+        "description": "Third-wave coffee connoisseur",
+        "achievements": ["Tried 50+ specialty cafes", "Home espresso setup"]
+      }
+    ],
+    "clubs": [
+      {
+        "icon": "💻",
+        "name": "Coders Club",
+        "role": "Founder & Lead Mentor",
+        "description": "Founded and lead a technical mentorship program at Northeastern University",
+        "impact": [
+          "Mentored 40+ students in ML and web development",
+          "Organized 20+ technical workshops",
+          "Facilitated connections with industry professionals"
+        ]
+      },
+      {
+        "icon": "🤝",
+        "name": "Tech Community",
+        "role": "Active Contributor",
+        "description": "Regular participant in hackathons and tech meetups",
+        "impact": [
+          "Microsoft Imagine Cup Semifinalist",
+          "Presented at MLOps EXPO at Google Cambridge",
+          "Active on tech forums and open source"
+        ]
+      }
+    ]
+  },
+  "journey": [
+    {
+      "year": "2018",
+      "icon": "🎓",
+      "title": "The Beginning",
+      "description": "Started programming journey with Python. Discovered the power of code to solve real-world problems.",
+      "color": "blue"
+    },
+    {
+      "year": "2021",
+      "icon": "🔐",
+      "title": "First Production System",
+      "description": "Built secure document processing pipelines for Indian Navy's Digilocker project, handling sensitive government data.",
+      "color": "purple"
+    },
+    {
+      "year": "2022",
+      "icon": "📄",
+      "title": "Research Published",
+      "description": "Published Binary Probing algorithms research in Springer. Microsoft Imagine Cup Regional Semifinalist.",
+      "color": "green"
+    },
+    {
+      "year": "2023",
+      "icon": "🏭",
+      "title": "Production ML",
+      "description": "Deployed CNN-Autoencoder visual inspection system at Stanley Black & Decker, achieving 80% F1-score and 60% time reduction.",
+      "color": "cyan"
+    },
+    {
+      "year": "2024",
+      "icon": "📚",
+      "title": "Master's Journey",
+      "description": "Started MS in Computer Science at Northeastern University, specializing in ML/AI Systems. Founded Coders Club, mentoring 40+ students.",
+      "color": "purple"
+    },
+    {
+      "year": "2025",
+      "icon": "🚀",
+      "title": "Current Focus",
+      "description": "Building HotelIQ with multi-agent orchestration. Researching GraphRAG and adaptive tokenization for embedding systems.",
+      "color": "pink"
+    }
+  ]
+}
