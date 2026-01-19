@@ -5,12 +5,11 @@ export default function Hero({ profile, links }) {
   return (
     <header className="min-h-screen flex flex-col md:flex-row justify-center items-center px-6 relative pt-16 gap-12">
       
-      {/* Floating Arrow - Scrolls with Hero */}
-      <FloatingArrow />
+      {/* <FloatingArrow /> */}
       
       <div className="text-center md:text-left z-10 max-w-2xl order-2 md:order-1">
         <div className="inline-block px-3 py-1 mb-6 rounded-full bg-white/5 border border-white/10 text-cyan-400 text-xs font-mono tracking-widest animate-pulse">
-          NEURAL INTERFACE V2.0
+          Devarshi Mahajan
         </div>
         <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white tracking-tight leading-tight">
           {profile.headline.split(' ')[0]} <br />
