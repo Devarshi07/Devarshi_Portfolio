@@ -1,22 +1,35 @@
 import pg from 'pg';
 const { Pool } = pg;
 
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL || 'postgresql://postgres:postgres@localhost:5432/portfolio_db',
-  ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false  // Disable SSL for local Docker
-});
+let pool = null;
 
-// Test connection
-pool.on('connect', () => {
-  console.log('✅ Connected to PostgreSQL database');
-});
+// Only create pool if DATABASE_URL is set
+if (process.env.DATABASE_URL) {
+  pool = new Pool({
+    connectionString: process.env.DATABASE_URL,
+    ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
+    connectionTimeoutMillis: 5000, // Fail fast if DB not available
+  });
 
-pool.on('error', (err) => {
-  console.error('❌ PostgreSQL error:', err);
-});
+  // Test connection
+  pool.on('connect', () => {
+    console.log('✅ Connected to PostgreSQL database');
+  });
+
+  pool.on('error', (err) => {
+    console.error('❌ PostgreSQL error:', err);
+  });
+} else {
+  console.warn('⚠️  DATABASE_URL not set - database features disabled');
+}
 
 // Initialize database tables
 export const initDatabase = async () => {
+  if (!pool) {
+    console.log('⚠️  Skipping database initialization - no connection');
+    return;
+  }
+
   try {
     await pool.query(`
       CREATE TABLE IF NOT EXISTS contact_requests (
