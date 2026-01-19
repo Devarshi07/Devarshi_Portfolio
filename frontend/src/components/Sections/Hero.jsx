@@ -3,7 +3,7 @@ import FloatingArrow from '../UI/FloatingArrow';
 
 export default function Hero({ profile, links }) {
   return (
-    <header className="min-h-screen flex flex-col md:flex-row justify-center items-center px-6 relative pt-16 gap-12">
+    <header className="min-h-screen flex flex-col md:flex-row justify-center items-center px-6 relative pt-24 md:pt-16 gap-12 pb-20">
       
       {/* <FloatingArrow /> */}
       
@@ -21,7 +21,6 @@ export default function Hero({ profile, links }) {
           {profile.subHeadline} <br />
           <span className="text-white text-base mt-2 block opacity-80">{profile.role}</span>
         </p>
-
         <div className="flex gap-6 justify-center md:justify-start mb-10">
           <a href={links.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-cyan-400 hover:scale-110 transition-all">
             <Icons.Github />
@@ -36,8 +35,7 @@ export default function Hero({ profile, links }) {
             <Icons.Mail />
           </a>
         </div>
-
-        <div className="flex gap-4 justify-center md:justify-start">
+        <div className="flex gap-4 justify-center md:justify-start flex-wrap">
           <a href="#projects" className="px-8 py-3 bg-cyan-600 hover:bg-cyan-500 text-white font-bold rounded shadow-[0_0_20px_rgba(0,243,255,0.3)] transition-all">
             View Projects
           </a>
@@ -47,8 +45,7 @@ export default function Hero({ profile, links }) {
           </a>
         </div>
       </div>
-
-      <div className="relative z-10 order-1 md:order-2 animate-float">
+      <div className="relative z-10 order-1 md:order-2 animate-float mt-20 md:mt-0">
         <div className="relative w-64 h-64 md:w-80 md:h-80 hologram-container">
           <div className="hologram-ring"></div>
           <div className="hologram-glow"></div>
