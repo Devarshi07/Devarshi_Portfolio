@@ -40,27 +40,33 @@ export const submitContact = async (req, res, next) => {
       console.log('✅ Emails sent successfully');
     } catch (emailError) {
       console.error('⚠️  Email sending failed:', emailError);
-      // Continue anyway - at least try to save to DB
+      // Return error if email fails
+      return res.status(500).json({
+        success: false,
+        error: 'Failed to send email notification. Please try again.'
+      });
     }
 
     // SECONDARY: Try to save to database (optional)
     let contactId = null;
     let createdAt = new Date().toISOString();
     
-    try {
-      console.log('💾 Saving to database...');
-      const result = await pool.query(
-        `INSERT INTO contact_requests (name, email, message, ip_address, user_agent) 
-         VALUES ($1, $2, $3, $4, $5) 
-         RETURNING id, created_at`,
-        [name, email, message, metadata.ip, metadata.userAgent]
-      );
-      contactId = result.rows[0].id;
-      createdAt = result.rows[0].created_at;
-      console.log(`✅ Contact request saved (ID: ${contactId})`);
-    } catch (dbError) {
-      console.error('⚠️  Database save failed (non-critical):', dbError.message);
-      // Don't fail the request - emails were already sent
+    if (pool) {
+      try {
+        console.log('💾 Saving to database...');
+        const result = await pool.query(
+          `INSERT INTO contact_requests (name, email, message, ip_address, user_agent) 
+           VALUES ($1, $2, $3, $4, $5) 
+           RETURNING id, created_at`,
+          [name, email, message, metadata.ip, metadata.userAgent]
+        );
+        contactId = result.rows[0].id;
+        createdAt = result.rows[0].created_at;
+        console.log(`✅ Contact request saved (ID: ${contactId})`);
+      } catch (dbError) {
+        console.error('⚠️  Database save failed (non-critical):', dbError.message);
+        // Don't fail the request - emails were already sent
+      }
     }
 
     res.json({
@@ -79,6 +85,13 @@ export const submitContact = async (req, res, next) => {
 
 // Get all contact requests (for admin)
 export const getContactRequests = async (req, res, next) => {
+  if (!pool) {
+    return res.status(503).json({
+      success: false,
+      error: 'Database not available'
+    });
+  }
+
   try {
     const { limit = 50, offset = 0 } = req.query;
     
@@ -108,6 +121,13 @@ export const getContactRequests = async (req, res, next) => {
 
 // Mark contact as read/responded
 export const updateContactStatus = async (req, res, next) => {
+  if (!pool) {
+    return res.status(503).json({
+      success: false,
+      error: 'Database not available'
+    });
+  }
+
   try {
     const { id } = req.params;
     const { status } = req.body;
