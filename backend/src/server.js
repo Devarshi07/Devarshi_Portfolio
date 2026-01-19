@@ -14,9 +14,17 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 8080;
 
-// Initialize database and email
-initDatabase();
-emailService.initialize();
+// Initialize services on startup
+(async () => {
+  try {
+    console.log('🔧 Initializing services...');
+    await initDatabase();
+    emailService.initialize();
+    console.log('✅ All services initialized successfully');
+  } catch (error) {
+    console.error('❌ Service initialization error:', error);
+  }
+})();
 
 app.use(helmet());
 
@@ -52,25 +60,45 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Request logging middleware
 app.use((req, res, next) => {
   console.log(`${req.method} ${req.path} - Origin: ${req.get('origin')}`);
   next();
 });
 
+// Health check endpoint
 app.get('/health', (req, res) => {
-  res.json({ status: 'ok', timestamp: new Date().toISOString() });
+  res.json({ 
+    status: 'ok', 
+    timestamp: new Date().toISOString(),
+    environment: process.env.NODE_ENV || 'development'
+  });
 });
 
+app.get('/healthz', (req, res) => {
+  res.json({ 
+    status: 'healthy', 
+    timestamp: new Date().toISOString() 
+  });
+});
+
+// API Routes
 app.use('/api/portfolio', portfolioRoutes);
 app.use('/api/contact', contactRoutes);
 app.use('/api/chat', chatRoutes);
 
+// 404 handler
 app.use((req, res) => {
-  res.status(404).json({ error: 'Route not found' });
+  res.status(404).json({ 
+    error: 'Route not found',
+    path: req.path 
+  });
 });
 
+// Error handler
 app.use(errorHandler);
 
+// Start server
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
   console.log(`📡 Environment: ${process.env.NODE_ENV || 'development'}`);
